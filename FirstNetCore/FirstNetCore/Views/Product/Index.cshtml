@@ -1,0 +1,36 @@
+﻿@* BU BİR YORUM SATIRIDIR *@
+
+<p>
+    @DateTime.Now <span>Şimdiki zaman görüntülendi.</span>   @*Soldaki gibi tek satırlık, boşluk içermeyen C# kodları için ; işareti gerekmez*@
+    <br />
+    @DateTime.Now <span>Şimdiki zaman tekrar görüntülendi.</span>
+</p>
+
+@{
+    string name = "Halim Can";
+    string surname = "Ocaklı";
+    int age = 25;
+
+    string fullname = $"{name} {surname}";
+}
+
+<p>
+    Full Name : @fullname
+</p>
+
+<p>
+    @{
+        if (name == "Halim Can")
+        {
+            <ul>
+                <li>Name: @name</li>
+                <li>Surname: @surname</li>
+                <li>Age: @age</li>
+            </ul>
+        }
+        else
+        {
+            <span>İsim eşleşmesi sağlanamadı.</span>
+        }
+    }
+</p>

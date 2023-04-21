@@ -10,19 +10,21 @@ namespace PassingData.Controllers
         public IActionResult Index()
         {
             string user_name = "Halim Can";
-            return View(user_name as Object);
+            return View(user_name as Object);   // View() metodu içerisindeki Oveloadlara bakın. İlki View ismini string olarak istiyor, diğeri Model objesi alıyor.
         }
 
         public IActionResult ShowProduct()
         {
             Product product = new Product();
+
             product.ProductName = "Television";
             product.UnitPrice = 20;
 
+            // View katmanına gönderdiğimiz veri Object tipinde.
             return View(product);
         }
 
-        public IActionResult GetProducList()
+        public IActionResult GetProductList()
         {
             List<Product> products = new List<Product>()
             {

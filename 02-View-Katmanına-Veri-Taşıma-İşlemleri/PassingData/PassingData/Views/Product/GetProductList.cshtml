@@ -3,10 +3,41 @@
 
 
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <table></table>
-    </body>
+<head>
+    <title>Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Product List</h2>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Price</th>
+        </tr>
+        @foreach (Product item in @Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryName</td>
+                <td>@item.UnitPrice TL</td>
+            </tr>
+        }
+    </table>
+</body>
 </html>

@@ -26,15 +26,15 @@ namespace PassingData.Controllers
                     FirstName = "Raziye",
                     LastName = "Dogan",
                     UserName = "ıyaş"
-                },            
-                new User()    
-                {             
+                },
+                new User()
+                {
                     FirstName = "Oğuzhan",
                     LastName = "Deniz",
                     UserName = "sarıbaba"
-                },            
-                new User()    
-                {             
+                },
+                new User()
+                {
                     FirstName = "Batın Berkin",
                     LastName = "Topaloğlu",
                     UserName = "partalcı"
@@ -49,7 +49,8 @@ namespace PassingData.Controllers
 
         // ViewData yöntemi ile View katmanına veri gönderelim.
         // ViewData'da Object türünde değer tutulur. Bu değeri kullanmak için unboxing yapmalıyız.
-        public IActionResult UserViewData() 
+        // Key-Value mantığı ile çalışır.
+        public IActionResult UserViewData()
         {
             ViewData["UserName"] = "halimocakli";
 
@@ -90,6 +91,28 @@ namespace PassingData.Controllers
 
             ViewData["Users"] = users;
 
+            return View();
+        }
+
+        // İçerisinde Object tipinde değer tutar.
+        // Key-Value mantığı ile çalışır.
+        // Diğer yöntemlerden farklı olarak kendi View'ına veri taşımakla birlikte Action'dan Action'a veri taşır ve de Action'dan View'a veri taşır.
+        // Tarayıcılardaki Cookie mantığını kullanır.
+        // Bir sefere mahsus kullanılabilir.
+        public IActionResult UserTempData()
+        {
+            TempData["Name"] = "Halim";
+
+            // UserTempData actionunu atlayıp UserTempDataTest actionuna geçelim.
+            return RedirectToAction("UserTempDataTest");
+
+            // return View();
+        }
+
+        public IActionResult UserTempDataTest()
+        {
+            TempData.Keep("Name");  // TempData'nın birden fazla defa kullanılmasını sağlar.
+            //string name = TempData["Name"].ToString();
             return View();
         }
     }

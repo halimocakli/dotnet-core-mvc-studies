@@ -1,0 +1,57 @@
+﻿@using PassingData.Models;
+<h1>Views ->> User ->> UserViewData</h1>
+<h2>ViewData ile View katmanına veri taşıma işlemi.</h2>
+
+
+@if (ViewData["UserName"].ToString() == "halsimocakli")
+{
+    <p>Hello @ViewData["UserName"].ToString()</p>
+}
+else
+{
+    User user = ViewData["User"] as User;
+
+    <p>Hello @user.FirstName</p>
+    <p>Hello @user.LastName</p>
+    <p>Hello @user.UserName</p>
+}
+
+<html>
+<head>
+    <title>Users List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Users List</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+        </tr>
+        @foreach (User item in ViewData["Users"] as List<User>)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.UserName</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

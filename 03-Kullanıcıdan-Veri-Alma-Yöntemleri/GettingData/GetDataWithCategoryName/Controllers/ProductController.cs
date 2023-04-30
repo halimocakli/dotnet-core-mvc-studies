@@ -17,9 +17,9 @@ namespace GetDataWithCategoryName.Controllers
         {
             List<Product> productList = products.FindAll(x => x.CategoryName == categoryName);
 
-            if (productList == null)
+            if (productList.Count == 0)
             {
-                ViewBag.Error = "Girdiğiniz ID ile eşleşen herhangi bir ürün bulunamadı.";
+                ViewBag.Error = "Girdiğiniz Kategori Adı ile eşleşen herhangi bir ürün bulunamadı.";
             }
 
             return View(productList);

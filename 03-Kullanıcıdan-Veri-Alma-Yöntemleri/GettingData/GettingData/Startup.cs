@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +16,7 @@ namespace GettingData
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,10 +31,10 @@ namespace GettingData
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                // Aşağıdaki metot, MapDefaultControllerRoute() metodu ile aynı işi yapar.
+                // Biz MapControllerRoute() metodunu kullanarak Route adresini kendimiz yazabildik.
+                // localhost:50003/home/getProduct/15(15 verisi actiona gider)
+                endpoints.MapControllerRoute("CustomRoute", "{controller=home}/{action=Index}/{id?}/{productname?}");
             });
         }
     }

@@ -1,0 +1,18 @@
+﻿@using PassingDataUsingViewData.Models;
+<h1>PassingDataUsingViewData ->> Views ->> ViewData ->> PassingSingleDataUsingViewData ->> VIEW KATMANI GÖRÜNTÜLENİYOR</h1>
+<h2>ViewData ile View katmanına tek veri taşıma işlemi.</h2>
+
+
+@if (ViewData["UserName"].ToString() == "halimcanocakli")
+{
+    <p>Hello @ViewData["UserName"].ToString()</p>
+}
+else
+{
+    @* Bu noktada unboxing yapılıyor. *@
+    User user = ViewData["User"] as User;
+
+    <p>Hello @user.FirstName</p>
+    <p>Hello @user.LastName</p>
+    <p>Hello @user.UserName</p>
+}

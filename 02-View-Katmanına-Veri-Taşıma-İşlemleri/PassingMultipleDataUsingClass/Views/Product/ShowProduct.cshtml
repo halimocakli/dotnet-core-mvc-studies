@@ -1,0 +1,43 @@
+﻿@model PassingMultipleDataUsingClass.Models.Product
+
+<html>
+<head>
+    <title>Product Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h3>PassingMultipleDataUsingClass ->> Controllers ->> ProductController ->> ShowProduct() Metodu ->> UYGULAMA ÇALIŞIYOR</h3>
+    <h3>PassingMultipleDataUsingClass ->> Views ->> ShowProduct ->> VIEW KATMANI GÖRÜNTÜLENİYOR</></h3>
+    <br />
+    <h2 style="text-align:center">Product Details</h2>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Price</th>
+        </tr>
+
+        <tr>
+            <td>@Model.ProductName</td>
+            <td>@Model.CategoryName</td>
+            <td>@Model.UnitPrice TL</td>
+        </tr>
+
+    </table>
+</body>
+</html>

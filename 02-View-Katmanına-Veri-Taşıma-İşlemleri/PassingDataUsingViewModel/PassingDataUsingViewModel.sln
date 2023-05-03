@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingDataUsingViewModel", "PassingDataUsingViewModel.csproj", "{71FFD808-385E-49A1-8603-F84391757566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71FFD808-385E-49A1-8603-F84391757566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FFD808-385E-49A1-8603-F84391757566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FFD808-385E-49A1-8603-F84391757566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FFD808-385E-49A1-8603-F84391757566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CBF7302-CDB2-4D85-AA09-142F060B2D93}
+	EndGlobalSection
+EndGlobal

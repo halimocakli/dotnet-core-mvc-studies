@@ -1,0 +1,63 @@
+﻿@using PassingDataUsingViewModel.Models
+@using PassingDataUsingViewModel.Models.ViewModel
+@model CustomerAndProductVM
+
+
+<html>
+<head>
+    <title>Customer and Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Customer List</h2>
+    <table>
+        <tr>
+            <th>Customer First Name</th>
+            <th>Customer Last Namy</th>
+            <th>Customer City</th>
+        </tr>
+        @foreach (Customer item in @Model.customers)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.City</td>
+            </tr>
+        }
+    </table>
+    <br />
+
+    <h2 style="text-align:center">Product List</h2>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Price</th>
+        </tr>
+
+        <tr>
+            <td>@Model.product.ProductName</td>
+            <td>@Model.product.CategoryName</td>
+            <td>@Model.product.UnitPrice</td>
+        </tr>
+
+    </table>
+
+    <p><b<em>DATE:</em></b> @Model.date</p>
+</body>
+</html>

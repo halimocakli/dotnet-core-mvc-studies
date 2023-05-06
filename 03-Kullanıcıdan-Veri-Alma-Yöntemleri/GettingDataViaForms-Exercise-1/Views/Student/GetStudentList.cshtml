@@ -1,0 +1,59 @@
+﻿@using GettingDataViaForms_Exercise_1.Models
+@model List<Student>
+
+<html>
+<head>
+    <title>Student List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Student List</h2>
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Surname</th>
+        </tr>
+        @foreach (Student student in @Model)
+        {
+            <tr>
+                <td>@student.StudentID</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+            </tr>
+        }
+    </table>
+
+    <br />
+    <br />
+
+    <h2>STUDENT REGISTRATION </h2>
+
+    <form method="post" action="/student/addstudent">
+        <label for="studentID">Student ID:</label><br>
+        <input type="text" id="stdid" name="StudentID"><br>
+        <label for="studentFirstName">First Name:</label><br>
+        <input type="text" id="stdfname" name="FirstName"><br>
+        <label for="studentLastName">Last Name:</label><br>
+        <input type="text" id="stdlname" name="LastName"><br><br />
+
+        <input type="submit" value="REGISTER"><br>
+    </form>
+</body>
+</html>
+

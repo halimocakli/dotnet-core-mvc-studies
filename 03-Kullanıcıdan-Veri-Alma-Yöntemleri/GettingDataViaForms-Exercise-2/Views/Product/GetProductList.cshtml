@@ -1,0 +1,58 @@
+﻿@using GettingDataViaForms_Exercise_2.Models
+@model List<Product>
+
+<html>
+<head>
+    <title>Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Product List</h2>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category Name</th>
+        </tr>
+        @foreach (Product product in @Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.ProductName</td>
+                <td>@product.CategoryName</td>
+            </tr>
+        }
+    </table>
+
+    <br />
+    <br />
+
+    <h2>ADD PRODUCT</h2>
+
+    <form method="post" action="/product/addproduct">
+        <label for="ID">Product ID:</label><br>
+        <input type="text" id="prdid" name="ID"><br>
+        <label for="ProductName">Product Name:</label><br>
+        <input type="text" id="prdname" name="ProductName"><br>
+        <label for="CategoryName">Category Name:</label><br>
+        <input type="text" id="prdctgname" name="CategoryName"><br><br />
+
+        <input type="submit" value="ADD PRODUCT"><br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@using GettingDataViaForms_Exercise_3.Models
+@model List<User>
+
+<html>
+<head>
+    <title>User List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">User List</h2>
+    <table>
+        <tr>
+            <th>User Name</th>
+            <th>User Surname</th>
+            <th>-User Nickname</th>
+            <th>User E-Mail</th>
+            <th>User Password</th>
+        </tr>
+        @foreach (User user in @Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.Password</td>
+            </tr>
+        }
+
+    </table>
+
+    <br />
+    <br />
+
+    <h2>USER REGISTRATION </h2>
+
+    <form method="post" action="/user/adduser">
+        <label for="FirstName">First Name:</label><br>
+        <input type="text" id="fname" name="FirstName"><br>
+        <label for="LastName">Last Name:</label><br>
+        <input type="text" id="lname" name="LastName"><br>
+        <label for="UserName">User Name:</label><br>
+        <input type="text" id="usrname" name="UserName"><br>
+        <label for="Email">User E-Mail:</label><br>
+        <input type="text" id="mail" name="Email"><br>
+        <label for="Password">User Password:</label><br>
+        <input type="text" id="pwd" name="Password"><br><br />
+
+        <input type="submit" value="REGISTER"><br>
+    </form>
+</body>
+</html>

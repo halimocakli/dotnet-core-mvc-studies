@@ -1,0 +1,26 @@
+﻿@using GettingDataViaForms_UsingTagHelpers.Models
+@model Teacher
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>ÖĞRETMEN EKLEME SAYFASI</h2>
+
+<form method="post" asp-action="addteacher" asp-controller="teacher">
+    <div>
+        <label asp-for="FirstName">First Name:</label><br />
+        <input type="text" asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="LastName">Last Name:</label><br />
+        <input type="text" asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="BranchID">Branch Name:</label><br />
+        <select asp-for="BranchID" asp-items="@(new SelectList(ViewBag.Branches,"ID","BranchName"))"></select>
+    </div>
+    <br />
+    <div>
+        <button type="submit">ÖĞRETMEN EKLE</button>
+    </div>
+
+</form>

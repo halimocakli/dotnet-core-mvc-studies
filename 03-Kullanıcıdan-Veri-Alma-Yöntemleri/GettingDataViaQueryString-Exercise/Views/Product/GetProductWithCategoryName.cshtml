@@ -1,0 +1,54 @@
+﻿@using GettingDataViaQueryString_Exercise.Models
+@model List<Product>
+
+@if (ViewBag.Error != null)
+{
+    <h2>@ViewBag.Error</h2>
+}
+
+else
+{
+    <html>
+    <head>
+        <title>Product List</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #DDDDDD;
+                text-align: left;
+                padding: 9px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #DDDDDD;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="text-align:center">Product List</h2>
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category Name</th>
+            </tr>
+
+            @foreach (Product item in @Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.CategoryName</td>
+                </tr>
+            }
+
+        </table>
+    </body>
+    </html>
+
+}
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingDataViaRoute", "GettingDataViaRoute.csproj", "{C1007C1F-4602-407D-ABDF-A44E3804141B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1007C1F-4602-407D-ABDF-A44E3804141B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1007C1F-4602-407D-ABDF-A44E3804141B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1007C1F-4602-407D-ABDF-A44E3804141B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1007C1F-4602-407D-ABDF-A44E3804141B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF0B8181-D6C7-4E3F-92E0-988633AAD160}
+	EndGlobalSection
+EndGlobal

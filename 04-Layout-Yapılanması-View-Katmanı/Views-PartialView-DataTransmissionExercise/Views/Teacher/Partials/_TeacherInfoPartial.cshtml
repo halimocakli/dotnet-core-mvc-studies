@@ -1,0 +1,22 @@
+﻿@model Teacher
+@{
+    string path = "/images/" + Model.Gender + ".jpg";
+    bool hasFooter = (bool)ViewData["hasFooter"];
+}
+
+<div class="card m-3" style="min-width:18rem; max-width:18rem">
+    <div class="car-header" style="text-align:center">
+        @Model.FirstName
+        @Model.LastName
+    </div>
+
+    <img class="card-img-top" src="@path" />
+
+    @if (hasFooter)
+    {
+        <div class="card-footer">
+            <a asp-controller="teacher" asp-action="DeleteTeacher" asp-route-id="@Model.ID" class="btn btn-danger">Delete</a>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,24 @@
+﻿@model List<WorkChart>
+
+<table class="table table-hover">
+    <tr>
+        <th>Öğretmen</th>
+        <th>Pazartesi</th>
+        <th>Salı</th>
+        <th>Çarşamba</th>
+        <th>Perşembe</th>
+        <th>Cuma</th>
+    </tr>
+    
+    @foreach (WorkChart item in Model)
+    {
+        <tr>
+            <td>@item.TeacherName</td>
+            @foreach (bool doesWork in item.Chart)
+            {
+                string doesWorkSymbol = doesWork ? "+" : "-";
+                <td>@doesWorkSymbol</td>
+            }
+        </tr>
+    }
+</table>

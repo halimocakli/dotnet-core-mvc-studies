@@ -1,0 +1,42 @@
+﻿@model List<Category>
+
+<html>
+<head>
+    <title>Category List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #DDDDDD;
+            text-align: left;
+            padding: 9px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">Category List</h2>
+    <table>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Description</th>
+        </tr>
+        @foreach (Category category in @Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+                <td>@category.Description</td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

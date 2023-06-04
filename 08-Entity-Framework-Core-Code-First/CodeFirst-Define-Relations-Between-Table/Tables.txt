@@ -1,0 +1,27 @@
+﻿TABLOLAR
+-----------------------------
+
+- AppUser
+
+- AppUserDetail
+
+- Product
+
+- Category
+
+- Order
+
+- OrderDetail [ARA TABLO]
+
+-----------------------------
+
+İLİŞKİLER
+-----------------------------
+
+<>	AppUser - AppUserDetail			:	ONE-TO-ONE
+<>	AppUser - Order					:	ONE-TO-MANY
+<>	Product - Category				:	ONE-TO-MANY
+
+<>	Product x Order					:	MANY-TO-MANY	[DİREKT OLARAK UYGULANAMAZ, YENİ BİR ARA TABLO OLUŞTURUYORUZ(OrderDetail)]
+	<>	Product - OrderDetail		:	ONE-TO-MANY
+	<>	Order	- OrderDetail		:	ONE-TO-MANY

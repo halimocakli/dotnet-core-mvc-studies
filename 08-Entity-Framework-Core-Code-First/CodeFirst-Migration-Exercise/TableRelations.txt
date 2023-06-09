@@ -1,0 +1,78 @@
+﻿TABLOLAR - SÜTUNLAR
+-----------------------------
+
+- Category
+	+ ID
+	+ Category Name
+
+- Book
+	+ ID
+	+ Page Count
+	+ Title
+	+ Category ID
+	+ Publication Date
+	+ Copies Owned
+
+- Author
+	+ ID
+	+ First Name
+	+ Last Name
+
+- Book Author
+	+ Book ID
+	+ Author ID
+
+- Fine
+	+ ID
+	+ Member ID
+	+ Loan ID
+	+ Fine Date
+	+ Fine Amount
+
+- Fine Payment
+	+ ID
+	+ Member ID
+	+ Payment Date
+	+ Payment Amount
+
+- Member
+	+ ID
+	+ First Name
+	+ Last Name
+	+ Joined Date
+	+ Active Status ID
+
+- Reservation
+	+ ID
+	+ Book ID
+	+ Member ID
+	+ Reservation Date
+	+ Reservation Status ID
+
+- Reservation Status
+	+ ID
+	+ Status Value
+
+- Loan
+	+ ID
+	+ Book ID
+	+ Member ID
+	+ Loan Date
+	+ Returned Date
+
+-----------------------------
+
+İLİŞKİLER
+-----------------------------
+<>	Reservation Status - Reservation	:	ONE-TO-MANY
+<>	Book - Category						:	ONE-TO-MANY
+<>	Book - Reservation					:	ONE-TO-MANY
+<>	Book - Book Author					:	ONE-TO-MANY
+<>	Book - Loan							:	ONE-TO-MANY
+<>	Book Author - Author				:	ONE-TO-MANY
+<>	Member - Reservation				:	ONE-TO-MANY
+<>	Member - Fine Payment				:	ONE-TO-MANY
+<>	Member - Loan						:	ONE-TO-MANY
+<>	Member - Fine						:	ONE-TO-MANY
+<>	Member - Member Status				:	ONE-TO-MANY
+<>	Loan - Fine							:	ONE-TO-MANY

@@ -1,0 +1,58 @@
+﻿@model List<Author>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-center">Kitap Yazarı Listeleme Sayfası</h3>
+<a asp-controller="Author" asp-action="Create" class="btn btn-primary" style="float:right">Yeni Kitap Yazarı Ekle</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sıra</th>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th>Aksiyonlar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th>@(i + 1)</th>
+                <td>@Model[i].FirstName</td>
+                <td>@Model[i].LastName</td>
+                <td>
+                    <a class="big-icon" asp-controller="Author" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
+                    <a class="big-icon margin-icon" asp-controller="Author" asp-action="Delete"><i class="bi bi-x-circle-fill"></i></a>
+                </td>
+            </tr>
+        }
+        <!--
+        <tr>
+            <th>1</th>
+            <td>Halim Can Ocaklı</td>
+            <td>
+                <a class="big-icon" asp-controller="Author" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
+                <a class="big-icon margin-icon" asp-controller="Author" asp-action="Delete"><i class="bi bi-x-circle-fill"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Oğuzhan Deniz</td>
+            <td>
+                <a class="big-icon" asp-controller="Author" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
+                <a class="big-icon margin-icon" asp-controller="Author" asp-action="Delete"><i class="bi bi-x-circle-fill"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Raziye Dogan</td>
+            <td>
+                <a class="big-icon" asp-controller="Author" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
+                <a class="big-icon margin-icon" asp-controller="Author" asp-action="Delete"><i class="bi bi-x-circle-fill"></i></a>
+            </td>
+        </tr>
+        -->
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data-Seeding", "Data-Seeding.csproj", "{0680FE1D-E8DC-41BC-ADEF-00F618D7F57C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0680FE1D-E8DC-41BC-ADEF-00F618D7F57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0680FE1D-E8DC-41BC-ADEF-00F618D7F57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0680FE1D-E8DC-41BC-ADEF-00F618D7F57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0680FE1D-E8DC-41BC-ADEF-00F618D7F57C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAA9F4D3-43B8-4EB6-A6C8-3CFAED4BA1A4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+</head>
+
+<body>
+    <header>
+        Store App : Header
+        <!-- Bir web sitesi tasarladığımızda, banner vb. kısımları belirli sayfalara eklemek istediğimiz de belirli konumlara, 
+        pozisyonlara ihtiyacımız olabilir. Layout yapısını kullandığımızda, esneklik imkanına sahip olamamaktayız. 
+        Tüm konumlar önceden belirlenmekte ve içerikler doldurulmaktadır. Oysa biz farklı alanlara farklı içerikler eklemek istediğimizde, 
+        Render Section ile istediğimiz sayfalarda, istediğimiz kısımlara eklemeler yapabilmekteyiz.-->
+        @RenderSection("Header", false)
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        @RenderSection("Header", false)
+        Footer
+    </footer>
+</body>
+
+</html>

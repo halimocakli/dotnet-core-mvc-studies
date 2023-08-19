@@ -1,0 +1,23 @@
+ViewResult and ActionResult in ASP.NET MVC
+
+ActionResult is an abstract or base class. On the other hand ViewResult is a subclass of ActionResult.
+
+Whenever Controller action return type is ActionResult then the action is capable of returning any subtype like view, json, RedirectToAction etc. But Whenever Controller action return type is ViewResult then the action is bounded to return only view.
+
+Following are the subtypes which can be returned from controller action whenever return type is ActionResult :
+
+ViewResult :- A specified view is rendered.
+PartialViewResult :- A specified partial view is rendered.
+EmptyResult :- An empty response.
+RedirectResult :- Redirected to a specified URL.
+RedirectToRouteResult :- Routing engine determines the redirection to specified URL based on given routing data.
+JsonResult :- Performs serialization of ViewData object to JSON format.
+JavaScriptResult :- It is capable of returning javascript code that is executed on client side.
+ContentResult :- It does not require a view only writes content to response stream.
+FileContentResult :- A byte array as file is returned to the client.
+FileStreamResult :- A file is returned to the client which is provided by stream.
+FilePathResult :- Content of a file which is on disk is returned by providing a path.
+
+When to use ViewResult and ActionResult
+
+If there is surity that an action method will return view page then ViewResult is used as return type in action method but if action method is capable of having different behaviour like either rendering a view or performing a redirection, then in that case base class ActionResult should be used as the return type. 

@@ -1,0 +1,18 @@
+@{
+    Layout = "_Layout";
+}
+
+@model List<StoreApp.Models.Product>
+
+@foreach (StoreApp.Models.Product product in Model)
+{
+    <div>
+        <h4>@product.ProductId - @product.ProductName - @product.Price</h4>
+        <p>
+            <a href="Product/Get/@product.ProductId">Get Product by Id</a>
+        </p>
+    </div>
+}mayı amaçlıyoruz.
+
+Eğitimin Hakkında
+Bu programın hedefi aşağıdaki kavramların anlaşılmasını sağlamak ve uygulayarak öğrenmeyi kolaylaştırmaktır:

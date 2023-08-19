@@ -1,0 +1,47 @@
+﻿@using Fluent_Validation.Models;
+@using Fluent_Validation.Dto;
+
+
+@model (Book book, List<AuthorDto> authors, List<BookTypeDto> bookTypes)
+
+<h3 class="text-center">Yeni Kitap Ekleme Sayfası</h3>
+<form method="post" asp-controller="Book" asp-action="Create" asp-area="Management">
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.Title">Kitap İsmi</label>
+        <input type="text" class="form-control" asp-for="book.Title" />
+        <span asp-validation-for="book.Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.AuthorID">Yazar</label>
+        <select class="form-control" asp-for="book.AuthorID" asp-items="@(new SelectList(Model.authors, "Id", "FullName"))"></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.BookTypeID">Kitap Türü</label>
+        <select class="form-control" asp-for="book.BookTypeID" asp-items="@(new SelectList(Model.bookTypes, "Id", "TypeName"))"></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.PageCount">Sayfa Sayısı</label>
+        <input type="text" class="form-control" asp-for="book.PageCount" />
+        <span asp-validation-for="book.PageCount" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.Description">İçerik</label>
+        <input type="text" style="height:100px;" class="form-control" asp-for="book.Description" />
+        <span asp-validation-for="book.Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.PublicationDate">Basım Tarihi</label>
+        <input type="date" class="form-control" asp-for="book.PublicationDate" />
+        <span asp-validation-for="book.PublicationDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="book.CopiesOwned">Baskı Sayısı</label>
+        <input type="number" class="form-control" asp-for="book.CopiesOwned" />
+        <span asp-validation-for="book.CopiesOwned" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+</form>

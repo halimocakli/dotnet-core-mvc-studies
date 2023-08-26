@@ -1,9 +1,12 @@
-@{
-    Layout = "_Layout";
-}
-
-@model StoreApp.Models.Product
+@model Product
 
 <h3>@Model.ProductName - @Model.Price</h3>
 
 <a href="/Product">All Products</a>
+
+<!-- Aşağıdaki kısım, _Layout dosyasında belirtilen RenderSection() metodunun Header kısmı için yazılmıştır -->
+@section Header{
+    <div>
+        Header for only Get controller
+    </div>
+}

@@ -20,9 +20,10 @@
         @RenderBody()
     </main>
     <footer>
-        @RenderSection("Header", false)
         Footer
+        @RenderSection("Footer", false)
     </footer>
+    @await RenderSectionAsync("Scripts", required:false)
 </body>
 
 </html>

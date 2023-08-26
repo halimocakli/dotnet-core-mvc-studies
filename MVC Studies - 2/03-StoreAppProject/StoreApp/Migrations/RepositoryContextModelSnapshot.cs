@@ -62,6 +62,12 @@ namespace StoreApp.Migrations
                             ProductId = 5,
                             Price = 1500m,
                             ProductName = "Deck"
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            Price = 2500m,
+                            ProductName = "Camera"
                         });
                 });
 #pragma warning restore 612, 618

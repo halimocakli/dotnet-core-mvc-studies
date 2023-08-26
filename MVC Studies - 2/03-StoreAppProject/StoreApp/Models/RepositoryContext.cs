@@ -22,7 +22,8 @@ namespace StoreApp.Models
                 new Product() { ProductId = 2, ProductName = "Keyboard", Price = 1_000 },
                 new Product() { ProductId = 3, ProductName = "Mouse", Price = 500 },
                 new Product() { ProductId = 4, ProductName = "Monitor", Price = 7_000 },
-                new Product() { ProductId = 5, ProductName = "Deck", Price = 1_500 }
+                new Product() { ProductId = 5, ProductName = "Deck", Price = 1_500 },
+                new Product() { ProductId = 6, ProductName = "Camera", Price = 2_500 }
             );
         }
     }

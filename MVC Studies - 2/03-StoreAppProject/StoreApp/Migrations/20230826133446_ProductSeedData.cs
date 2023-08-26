@@ -32,6 +32,11 @@ namespace StoreApp.Migrations
                 table: "Products",
                 columns: new[] { "ProductId", "Price", "ProductName" },
                 values: new object[] { 5, 1500m, "Deck" });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "ProductId", "Price", "ProductName" },
+                values: new object[] { 6, 2500m, "Camera" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -60,6 +65,11 @@ namespace StoreApp.Migrations
                 table: "Products",
                 keyColumn: "ProductId",
                 keyValue: 5);
+
+            migrationBuilder.DeleteData(
+                table: "Products",
+                keyColumn: "ProductId",
+                keyValue: 6);
         }
     }
 }

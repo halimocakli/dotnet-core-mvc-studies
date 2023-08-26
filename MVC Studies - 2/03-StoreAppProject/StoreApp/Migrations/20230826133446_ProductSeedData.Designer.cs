@@ -10,7 +10,7 @@ using StoreApp.Models;
 namespace StoreApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230810104343_ProductSeedData")]
+    [Migration("20230826133446_ProductSeedData")]
     partial class ProductSeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,12 @@ namespace StoreApp.Migrations
                             ProductId = 5,
                             Price = 1500m,
                             ProductName = "Deck"
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            Price = 2500m,
+                            ProductName = "Camera"
                         });
                 });
 #pragma warning restore 612, 618

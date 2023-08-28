@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using StoreApp.Models;
+using Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Database iletişimi için DbContext servis kaydımızı oluşturuyoruz.
+// b => b.MigrationsAssembly("StoreApp") -> Migrations klasörü ve ifadeleri StoreApp klasörü altında oluşacak.
 builder.Services.AddDbContext<RepositoryContext>(options =>
 {
-    options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"),
+    b => b.MigrationsAssembly("StoreApp"));
 });
 
 // Servisleri inşa ediyoruz, yani uygulamayı ayağa kaldırıyoruz.

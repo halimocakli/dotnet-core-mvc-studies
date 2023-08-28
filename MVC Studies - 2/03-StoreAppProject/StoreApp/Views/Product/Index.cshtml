@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    @foreach (Product product in Model)
-    {
-        <partial name="_ProductCard" model="@product" />
-    }
+    <div class="row my-3">
+        @foreach (Product product in Model)
+        {
+            <partial name="_ProductCard" model="@product" />
+        }
+    </div>
 
     <footer>
-        <!-- Aşağıdaki kısım, _Layout dosyasında belirtilen RenderSection() metodunun Footer kısmı için yazılmıştır -->
-        @section Footer{
-            <div>
-                Only for Index footer.
-            </div>
-        }
+        <!-- Aşağıdaki kısım, _Layout dosyasında belirtilen RenderSection() metodunun Footer kısmı için yazılmıştır. Disabled durumdadır-->
+        @* @section Footer{
+        <div>
+        Only for Index footer.
+        </div>
+        } *@
     </footer>
 </body>
 

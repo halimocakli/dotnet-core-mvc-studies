@@ -12,23 +12,22 @@
 
 <body>
     <header>
-        Store App : Header
         <partial name="_Navbar" />
         <!-- Bir web sitesi tasarladığımızda, banner vb. kısımları belirli sayfalara eklemek istediğimiz de belirli konumlara, 
         pozisyonlara ihtiyacımız olabilir. Layout yapısını kullandığımızda, esneklik imkanına sahip olamamaktayız. 
         Tüm konumlar önceden belirlenmekte ve içerikler doldurulmaktadır. Oysa biz farklı alanlara farklı içerikler eklemek istediğimizde, 
         Render Section ile istediğimiz sayfalarda, istediğimiz kısımlara eklemeler yapabilmekteyiz.-->
         @RenderSection("Header", false)
-        <hr />
     </header>
-    <main>
-        @RenderBody()
-    </main>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
     <footer>
-        <hr />
-        Footer
         @RenderSection("Footer", false)
     </footer>
+
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js"></script>

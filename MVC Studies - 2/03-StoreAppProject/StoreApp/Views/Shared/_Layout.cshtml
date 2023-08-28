@@ -4,25 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
+    <title>_Layout File</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
 </head>
 
 <body>
     <header>
         Store App : Header
+        <partial name="_Navbar" />
         <!-- Bir web sitesi tasarladığımızda, banner vb. kısımları belirli sayfalara eklemek istediğimiz de belirli konumlara, 
         pozisyonlara ihtiyacımız olabilir. Layout yapısını kullandığımızda, esneklik imkanına sahip olamamaktayız. 
         Tüm konumlar önceden belirlenmekte ve içerikler doldurulmaktadır. Oysa biz farklı alanlara farklı içerikler eklemek istediğimizde, 
         Render Section ile istediğimiz sayfalarda, istediğimiz kısımlara eklemeler yapabilmekteyiz.-->
         @RenderSection("Header", false)
+        <hr />
     </header>
     <main>
         @RenderBody()
     </main>
     <footer>
+        <hr />
         Footer
         @RenderSection("Footer", false)
     </footer>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
     @await RenderSectionAsync("Scripts", required:false)
 </body>
 

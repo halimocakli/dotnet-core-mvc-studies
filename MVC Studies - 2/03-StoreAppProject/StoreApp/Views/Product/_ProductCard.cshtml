@@ -1,0 +1,7 @@
+@model Product
+
+<div>
+    <h2>@Model.ProductName</h2>
+    <p>@Model.Price.ToString("C")</p>
+    <a asp-action="Get" asp-route-id="@Model.ProductId">Get Details</a>
+</div>

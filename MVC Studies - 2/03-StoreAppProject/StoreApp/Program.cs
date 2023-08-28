@@ -21,6 +21,7 @@ var app = builder.Build();
 // app.MapGet("/turkcell", () => "Turkcell Akademi");
 
 // Middleware
+app.UseStaticFiles();   // wwwroot klasörünün kullanılabilir hale gelmesini sağlar.
 app.UseHttpsRedirection();
 app.UseRouting();
 

@@ -1,18 +1,29 @@
 @model List<Product>
 
-<!-- Aşağıdaki kısım, _Layout dosyasında belirtilen RenderSection() metodunun Footer kısmı için yazılmıştır -->
-@section Footer{
-    <div>
-        Only for Index footer.
-    </div>
-}
+<!DOCTYPE html>
+<html lang="en">
 
-@foreach (Product product in Model)
-{
-    <div>
-    <h4>@product.ProductId - @product.ProductName - @product.Price</h4>
-    <p>
-        <a href="Product/Get/@product.ProductId">Get Product by Id</a>
-    </p>
-</div>
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+</head>
+
+<body>
+    @foreach (Product product in Model)
+    {
+        <partial name="_ProductCard" model="@product" />
+    }
+
+    <footer>
+        <!-- Aşağıdaki kısım, _Layout dosyasında belirtilen RenderSection() metodunun Footer kısmı için yazılmıştır -->
+        @section Footer{
+            <div>
+                Only for Index footer.
+            </div>
+        }
+    </footer>
+</body>
+
+</html>
+

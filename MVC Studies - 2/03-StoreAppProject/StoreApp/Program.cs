@@ -18,6 +18,7 @@ builder.Services.AddDbContext<RepositoryContext>(options =>
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 // Servisleri inşa ediyoruz, yani uygulamayı ayağa kaldırıyoruz.
 var app = builder.Build();

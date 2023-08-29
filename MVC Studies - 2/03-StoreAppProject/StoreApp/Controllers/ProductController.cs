@@ -15,7 +15,6 @@ namespace StoreApp.Controllers
         {
             _manager = manager;
         }
-
         public IActionResult Index()
         {
             if (_manager.Product.GetAllProducts(false) != null)
@@ -28,7 +27,6 @@ namespace StoreApp.Controllers
                 return View();
             }
         }
-        // Model Binding ile elde edilen _id değeri, Product modeli içerisinde aranıyor ve elde edilen ilk değer View'a gönderiliyor.
         public IActionResult Get(int id)
         {
             Product? product = _manager.Product.GetProductById(id, false);

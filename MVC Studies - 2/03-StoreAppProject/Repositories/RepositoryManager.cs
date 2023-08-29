@@ -6,14 +6,18 @@ namespace Repositories
     {
         private readonly RepositoryContext _context;
         private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public RepositoryManager(IProductRepository productRepository, RepositoryContext context)
+        public RepositoryManager(RepositoryContext context, IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            _productRepository = productRepository;
             _context = context;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public IProductRepository Product => _productRepository;
+
+        public ICategoryRepository Category => _categoryRepository;
 
         public void Save()
         {
